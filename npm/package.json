@@ -1,0 +1,48 @@
+{
+  "name": "@apiverve/qrcodereader",
+  "version": "1.1.13",
+  "description": "QR Code Reader is a powerful tool that extracts text and data from QR codes in images. Simply provide an image URL or upload an image containing a QR code to decode its contents.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "mocha",
+    "example": "node examples/basic.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apiverve/qrcodereader-api.git",
+    "directory": "npm"
+  },
+  "keywords": [
+    ""
+  ],
+  "author": {
+    "name": "APIVerve",
+    "email": "hello@apiverve.com",
+    "url": "https://apiverve.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apiverve/qrcodereader-api/issues"
+  },
+  "homepage": "https://qrcodereader.apiverve.com?utm_source=npm&utm_medium=homepage",
+  "devDependencies": {
+    "mocha": "^11.0.1",
+    "chai": "^5.1.2",
+    "dotenv": "^16.4.7"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "promise": "^8.3.0",
+    "axios": "1.13.2"
+  }
+}
