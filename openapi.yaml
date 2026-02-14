@@ -1,0 +1,98 @@
+openapi: 3.0.4
+info:
+  title: QR Code Reader
+  description: >-
+    QR Code Reader is a powerful tool that extracts text and data from QR codes
+    in images. Simply provide an image URL or upload an image containing a QR
+    code to decode its contents.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.0
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+  - url: https://api.apiverve.com/
+paths:
+  /v1/qrcodereader:
+    post:
+      summary: Read QR Code
+      description: >-
+        QR Code Reader is a powerful tool that extracts text and data from QR
+        codes in images. Simply provide an image URL or upload an image
+        containing a QR code to decode its contents.
+      operationId: qrcodereader
+      parameters: []
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: object
+                    description: data
+              example:
+                status: ok
+                error: null
+                data:
+                  text: '''Twas brillig'
+                  location:
+                    topLeft:
+                      x: 9.927694968294492
+                      'y': 9.927694968294492
+                    topRight:
+                      x: 215.24999999999997
+                      'y': 9.749999999999996
+                    bottomLeft:
+                      x: 9.749999999999996
+                      'y': 215.24999999999997
+                    bottomRight:
+                      x: 216.14779062994094
+                      'y': 216.14779062994094
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occurred, try again later
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                image:
+                  type: string
+                  format: binary
+                  description: 'File to upload (accepted: .jpg, .jpeg, .png, .gif, max 10MB)'
+                  acceptedTypes:
+                    - .jpg
+                    - .jpeg
+                    - .png
+                    - .gif
+                  maxSizeMB: 10
+              required:
+                - image
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+  - api_key: []
+sampleRequest:
+  image: https://upload.wikimedia.org/wikipedia/commons/d/d7/Commons_QR_code.png
