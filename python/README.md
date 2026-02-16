@@ -240,9 +240,10 @@ from apiverve_qrcodereader.apiClient import QrcodereaderAPIClient
 
 api = QrcodereaderAPIClient("[YOUR_API_KEY]")
 
-try:
-    # This API requires a file upload
+# This API requires a file upload
 files = { "image": open("/path/to/image.jpg", "rb") }
+
+try:
     result = api.execute(query)
     print(result)
 finally:
