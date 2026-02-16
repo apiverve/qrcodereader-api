@@ -26,7 +26,7 @@ Add the dependency:
 
 ```gradle
 dependencies {
-    implementation 'com.github.apiverve:qrcodereader-api:1.1.13'
+    implementation 'com.github.apiverve:qrcodereader-api:1.1.14'
 }
 ```
 
@@ -47,7 +47,7 @@ QRCodeReaderAPIClient client = new QRCodeReaderAPIClient("YOUR_API_KEY");
 try {
     // Prepare request parameters
     Map<String, Object> parameters = new HashMap<>();
-    parameters.put("image", "");
+    parameters.put("image", "https://upload.wikimedia.org/wikipedia/commons/d/d7/Commons_QR_code.png");
 
     // Execute the request
     APIResponse response = client.execute(parameters);
