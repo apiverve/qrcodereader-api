@@ -1,12 +1,12 @@
 {
   "name": "@apiverve/qrcodereader",
-  "version": "1.1.14",
+  "version": "1.2.0",
   "description": "QR Code Reader is a powerful tool that extracts text and data from QR codes in images. Simply provide an image URL or upload an image containing a QR code to decode its contents.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=18.0.0"
   },
   "files": [
     "index.js",
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    ""
+    "qr code reader", "qr scanner", "qr decoder", "qr code api", "barcode reader"
   ],
   "author": {
     "name": "APIVerve",
@@ -41,8 +41,7 @@
     "dotenv": "^16.4.7"
   },
   "dependencies": {
-    "node-fetch": "^3.3.2",
-    "promise": "^8.3.0",
-    "axios": "1.13.2"
+    "axios": "1.13.2",
+    "form-data": "^4.0.1"
   }
 }
