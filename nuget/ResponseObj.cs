@@ -25,6 +25,9 @@ namespace APIVerve.API.QRCodeReader
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -54,9 +57,21 @@ namespace APIVerve.API.QRCodeReader
     public partial class BottomLeft
     {
         [JsonProperty("x")]
-        public double X { get; set; }
+        public double? X { get; set; }
 
         [JsonProperty("y")]
-        public double Y { get; set; }
+        public double? Y { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
