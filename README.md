@@ -1,13 +1,13 @@
-# [QR Code Reader API](https://qrcodereader.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [QR Code Reader API](https://apiverve.com/marketplace/qrcodereader?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-QR Code Reader is a powerful tool that extracts text and data from QR codes in images. Simply provide an image URL or upload an image containing a QR code to decode its contents.
+QR Code Reader is a QR code scanner API that decodes text and web links from uploaded QR code images. Send a JPG, PNG, or GIF file up to 10 MB to retrieve the raw encoded payload, with paid plans adding corner coordinates.
 
 The QR Code Reader API provides a simple, reliable way to integrate qr code reader functionality into your applications. Built for developers who need production-ready qr code reader capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://qrcodereader.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/qrcodereader?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://qrcodereader.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/qrcodereader?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-POST-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -165,7 +165,7 @@ go get github.com/apiverve/qrcodereader-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [QR Code Reader API](https://qrcodereader.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [QR Code Reader API](https://apiverve.com/marketplace/qrcodereader?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/qrcodereader](https://docs.apiverve.com/ref/qrcodereader)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -195,11 +195,46 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the QR Code Reader API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "text": "'Twas brillig",
+    "location": {
+      "topLeft": {
+        "x": 9.927694968294492,
+        "y": 9.927694968294492
+      },
+      "topRight": {
+        "x": 215.24999999999997,
+        "y": 9.749999999999996
+      },
+      "bottomLeft": {
+        "x": 9.749999999999996,
+        "y": 215.24999999999997
+      },
+      "bottomRight": {
+        "x": 216.14779062994094,
+        "y": 216.14779062994094
+      }
+    }
+  }
 }
 ```
 
@@ -207,7 +242,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [QR Code Reader API](https://qrcodereader.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [QR Code Reader API](https://apiverve.com/marketplace/qrcodereader?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)

@@ -2,9 +2,9 @@ openapi: 3.0.4
 info:
   title: QR Code Reader
   description: >-
-    QR Code Reader is a powerful tool that extracts text and data from QR codes
-    in images. Simply provide an image URL or upload an image containing a QR
-    code to decode its contents.
+    QR Code Reader is a QR code scanner API that decodes text and web links from
+    uploaded QR code images. Send a JPG, PNG, or GIF file up to 10 MB to
+    retrieve the raw encoded payload, with paid plans adding corner coordinates.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -19,7 +19,7 @@ servers:
 paths:
   /v1/qrcodereader:
     post:
-      summary: Read QR Code
+      summary: QR Code Reader
       description: >-
         QR Code Reader is a powerful tool that extracts text and data from QR
         codes in images. Simply provide an image URL or upload an image
@@ -78,12 +78,12 @@ paths:
                   type: string
                   format: binary
                   description: 'File to upload (accepted: .jpg, .jpeg, .png, .gif, max 10MB)'
-                  acceptedTypes:
+                  x-acceptedTypes:
                     - .jpg
                     - .jpeg
                     - .png
                     - .gif
-                  maxSizeMB: 10
+                  x-maxSizeMB: 10
               required:
                 - image
 components:
