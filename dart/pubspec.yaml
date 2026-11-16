@@ -1,0 +1,16 @@
+name: apiverve_qrcodereader
+description: "QR Code Reader is a QR code scanner API that decodes text and web links from uploaded QR code images. Send a JPG, PNG, or GIF file up to 10 MB to retrieve the raw encoded payload, with paid plans adding corner coordinates."
+version: 1.2.6
+homepage: https://apiverve.com/marketplace/qrcodereader?utm_source=dart&utm_medium=referral&utm_content=homepage
+repository: https://github.com/apiverve/qrcodereader-api/tree/main/dart
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  http: ^1.1.0
+  http_parser: ^4.0.0
+
+dev_dependencies:
+  lints: ^3.0.0
+  test: ^1.24.0
